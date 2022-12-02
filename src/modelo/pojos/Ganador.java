@@ -2,7 +2,7 @@ package modelo.pojos;
 
 import java.util.Objects;
 
-public class Ganador<T, E extends Vivienda> {
+public class Ganador<T extends Aspirante, E extends Vivienda> {
 	private T t;
 	private E e;
 	
