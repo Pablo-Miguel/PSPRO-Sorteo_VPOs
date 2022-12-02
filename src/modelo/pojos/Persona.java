@@ -1,13 +1,12 @@
 package modelo.pojos;
 
-import java.util.Objects;
-
+import exceptions.NotNullDNI;
 import modelo.enums.TipoPersona;
 
 public class Persona extends Aspirante {
 	private TipoPersona tipoPersona;
 	
-	public Persona(String nombre, String dni, TipoPersona tipoPersona) {
+	public Persona(String nombre, String dni, TipoPersona tipoPersona) throws NullPointerException, NotNullDNI {
 		super(nombre, dni);
 		this.tipoPersona = tipoPersona;
 	}

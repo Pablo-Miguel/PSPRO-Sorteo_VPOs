@@ -2,13 +2,25 @@ package modelo.pojos;
 
 import java.util.Objects;
 
+import exceptions.NotNullDNI;
+
 public abstract class Aspirante {
 	private String nombre, dni;
 
-	public Aspirante(String nombre, String dni) {
+	public Aspirante(String nombre, String dni) throws NotNullDNI, NullPointerException {
 		super();
-		this.nombre = nombre;
-		this.dni = dni;
+		
+		if(!nombre.equals(null) && !nombre.equals("")) {
+			this.nombre = nombre;
+		} else {
+			throw new NullPointerException("El nombre no puede ser null");
+		}
+		
+		if(!dni.equals(null) && !dni.equals("")) {
+			this.dni = dni;
+		} else {
+			throw new NotNullDNI();
+		}
 	}
 
 	public String getNombre() {
